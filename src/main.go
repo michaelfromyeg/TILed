@@ -9,7 +9,11 @@ import (
 )
 
 var (
-	message string
+	message   string
+	url       string
+	directory string
+	name      string
+	email     string
 )
 
 func main() {
@@ -20,12 +24,18 @@ func main() {
 	checkVars()
 
 	// If user does not supply flags, print usage
-	if flag.NFlag() == 0 || flag.NFlag() >= 2 {
+	if flag.NFlag() == 0 || flag.NFlag() >= 6 {
 		printUsage()
 	}
 
-	create()
-	initFile()
+	// createGithubRepository() -- TODO: implement error handling
+	// cloneGithubRepository(directory)
+	// initLocalFile(directory)
+	updateFile(directory, message, url)
+	addFile(directory)
+	commitFile(name, email, directory)
+	pushChanges(directory)
+	// deleteLocalFile()
 }
 
 func init() {
@@ -36,6 +46,10 @@ func init() {
 	}
 
 	flag.StringVarP(&message, "message", "m", "", "Set the message to append to the TIL readme.")
+	flag.StringVarP(&url, "url", "u", "", "Set the URL to append to the TIL readme.")
+	flag.StringVarP(&directory, "directory", "d", "", "Set a given directory to clone the repository to. Use '.' if you'd like to clone to your current folder.")
+	flag.StringVarP(&name, "name", "n", "", "Set name")
+	flag.StringVarP(&email, "email", "e", "", "Set email")
 }
 
 func printUsage() {

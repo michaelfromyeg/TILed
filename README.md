@@ -1,9 +1,20 @@
-# TIL CLI
+# TILed
 
-A command-line interface for creating a managing a TIL-style page.
+A command-line interface for creating a managing a TIL-style page in a GitHub repository.
 
 ## Installation
 
-On Windows, install pkg-config. This is best done with chocolatey.
+TBD
 
-`choco install pkgconfiglite`
+## Usage
+
+TBD
+
+## Road map
+
+- Finish MVP
+- Add GitHub pages support
+
+## Contributing
+
+TBD
