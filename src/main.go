@@ -5,6 +5,8 @@ import (
 	"os"
 
 	"github.com/joho/godotenv"
+	"github.com/michaelfromyeg/tiled/git"
+	"github.com/michaelfromyeg/tiled/utils"
 	flag "github.com/ogier/pflag"
 )
 
